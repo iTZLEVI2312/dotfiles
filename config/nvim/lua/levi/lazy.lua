@@ -17,8 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- import your plugins
-    -- { import = "levi.plugins" },
-    { import = "levi.pluginlist" }
+    { import = "levi.plugins" },
+    { import = "levi.plugins.lsp" }
   },
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "gruvbox" } },
