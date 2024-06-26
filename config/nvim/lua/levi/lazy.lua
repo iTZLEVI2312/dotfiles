@@ -18,9 +18,10 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     -- { import = "levi.plugins" },
+    { import = "levi.pluginlist" }
   },
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "gruvbox" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
