@@ -3,12 +3,14 @@
 {
 
   # Enable display manager
-  services.displayManager = {
-      sddm = {
-        enable = true;
-        wayland.enable = true; # experimental Wayland support
-        package = pkgs.kdePackages.sddm;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd}/bin/agreety --cmd Hyprland -f 6";
+        user = "greeter";
       };
+    };
   };
 
   # Enable hyprland and related stuff
@@ -66,11 +68,8 @@
     cliphist                           # clipboard manager
 
     # Display Manager -------------------------------------------------- #
-    kdePackages.sddm                   # display manager for KDE plasma
-    libsForQt5.sddm                    # alt pkg of sddm 
-    libsForQt5.qt5.qtquickcontrols     # for sddm theme ui elements
-    libsForQt5.qt5.qtquickcontrols2    # for sddm theme ui elements
-    libsForQt5.qt5.qtgraphicaleffects  # for sddm theme effects
+    greetd.greetd                      # login manager daemon
+    greetd.tuigreet                    # Graphical console greeter for greetd
 
     # Dependencies ----------------------------------------------------- #
     polkit_gnome                       # authentication agent
