@@ -29,7 +29,6 @@
       "cpu",
       "temperature#cpu",
       "pulseaudio",
-      "pulseaudio#microphone",
       "battery",
       "network",
       "tray"
@@ -113,15 +112,6 @@
         "car": " ",
         "default": [" ", " ", "󰕾 ", "󰕾 ", "󰕾 ", "  ", "  ", "  "]
       },
-    },
-
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "rotate": 0,
-        "format-source": "",
-        "format-source-muted": " ",
-        "on-click": "pamixer --source 55 -t",
-        "scroll-step": 5
     },
 
     "network": {
