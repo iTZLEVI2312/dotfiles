@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
 
@@ -7,8 +7,11 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd}/bin/agreety --cmd Hyprland -f 6";
-        user = "greeter";
+        command =
+          let
+            session = config.services.displayManager.sessionData.desktops;
+          in
+            "${pkgs.greetd.tuigreet}/bin/tuigreet -t -s ${session}/share/xsessions:${session}/share/wayland-sessions";
       };
     };
   };
